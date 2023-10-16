@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-//import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { GlobalConstants } from '../shared/global-constants';
 import { SnackbarService } from '../snackbar.service';
 import { UserService } from '../user.service';
@@ -22,8 +21,7 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private snackbarService: SnackbarService,
     public dialogRef: MatDialogRef<LoginComponent>
-  ) //private ngxService:NgxUiLoaderService,
-  {}
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -37,7 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   handleSubmit() {
-    //this.ngxService.start();
     var formDate = this.loginForm.value;
     var data = {
       email: formDate.email,
@@ -46,14 +43,12 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(data).subscribe(
       (response: any) => {
-        //this.ngxService.stop();
         this.dialogRef.close();
         localStorage.setItem('token', response.token);
         //alert("Successfully Login");
         this.router.navigate(['/event/dashboard']);
       },
       (error: { error: { message: any } }) => {
-        //this.ngxService.stop();
         if (error.error?.message) {
           this.responseMessage = error.error?.message;
         } else {
