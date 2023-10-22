@@ -39,6 +39,7 @@ export class ProductComponent implements OnInit {
       price: [null, Validators.required],
       description: [null, Validators.required],
       location: [null, Validators.required],
+      imgUrl: [null],
     });
     if (this.dialogData.action === 'Edit') {
       this.dialogAction = 'Edit';
@@ -118,6 +119,7 @@ export class ProductComponent implements OnInit {
       price: formData.price,
       description: formData.description,
       location: formData.location,
+      imgUrl: formData.imgUrl,
     };
     this.productService.update(data).subscribe(
       (response: any) => {

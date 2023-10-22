@@ -2,28 +2,80 @@
 .float-right {
     float: right;
 }
-
+/*
 mat-card {
     padding: 20px;
 }
-
 table {
     width: 100%;
-}
+}*/
+
+
 
 .filter-part{
-    margin-bottom: 25px; /* Adjust the value to control the spacing */
-
+    margin: 20px;
+    border-radius: 20px; /*r Ajustare pentru rotunjime*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
 }
 
+body{
+    background-color: #D3D3D3;
+}
+
+.manage-part{
+    margin: 20px;
+    border-radius: 20px;
+   
+}
+.float-right {
+    position: absolute;
+    top: 10px; /* Ajustați aceasta valoare la cât de sus doresc să fie butonul */
+    right: 15px; /* Ajustați aceasta valoare pentru poziționarea pe orizontală */
+    border-radius: 20px; /*r Ajustare pentru rotunjime*/
+
+}
 .card-container{  
-  padding: 20px 25px 0px 25px;
+  margin: 15px;
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
 
-.product-card {
-    width: calc(20.00% - 10px); /* Adjust the width as needed; subtract margin */
-    margin: 10px; /* Add margin to separate cards */
-  }
+}
+.product-card{
+    width: 360px;
+    height: 400px;
+    margin: 20px;
+    border-radius: 20px;
+    transition:0.5s;
+    background-color:#b7babb;
+
+}
+.product-card:hover{
+    height: 450px;
+    background-color: #383e42;
+}
+.image-class {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    opacity: 0.5;
+    position: relative;
+    left:45%;
+}
+ 
+/*
+.product-card:hover {
+    width: calc(20.00% - 10px); 
+    padding: 20px 25px 0px 25px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 300px;
+    position:relative;
+    background-color: #fff;
+    transition: 0.5s;
+  }*/

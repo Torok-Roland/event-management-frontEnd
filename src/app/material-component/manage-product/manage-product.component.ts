@@ -20,6 +20,8 @@ export class ManageProductComponent implements OnInit {
     'description',
     'location',
     'price',
+    /** img */
+    'imgUrl',
     'edit',
   ];
   dataSource: any;

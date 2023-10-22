@@ -1,6 +1,5 @@
 <body>
-  <!--
-  <mat-card>
+  <mat-card class="manage-part">
     <b><span>Manage Product</span></b>
     <button
       mat-flat-button
@@ -18,13 +17,18 @@
       <input matInput (keyup)="applyFilter($event)" #input />
     </mat-form-field>
   </mat-card>
-  -->
-
   <div class="card-container">
     <mat-card *ngFor="let product of dataSource" class="product-card">
       <mat-card-header>
         <mat-card-title>{{ product.name }}</mat-card-title>
       </mat-card-header>
+      <img
+        class="image-class"
+        mat-card-image
+        src="{{
+          product.imgUrl ? product.imgUrl : '../../assets/img/upcoming.jpg'
+        }}"
+      />
       <mat-card-content>
         <p><strong>Category:</strong> {{ product.categoryName }}</p>
         <p><strong>Description:</strong> {{ product.description }}</p>
