@@ -58,10 +58,23 @@ export class ManageProductComponent implements OnInit {
       }
     );
   }
-
-  applyFilter(event: Event) {
+  /*   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }*/
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value
+      .trim()
+      .toLowerCase();
+
+    if (filterValue === '') {
+      // If the filter is empty, reset the dataSource to its original state
+      this.loadProducts();
+    } else {
+      this.dataSource = this.dataSource.filter((product: any) => {
+        return product.name.toLowerCase().includes(filterValue);
+      });
+    }
   }
 
   handleAddAction() {
